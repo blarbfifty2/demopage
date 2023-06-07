@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Video and Image Example</title>
+  <style>
+    body {
+      background-color: black;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+    
+    .container {
+      display: flex;
+      align-items: center;
+    }
+    
+    .video-container,
+    .image {
+      flex: 1;
+      max-width: 50%; /* Adjust the value to set the desired maximum width */
+    }
+    
+    .video-container {
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .video {
+      width: 30%;
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    
+    .image {
+      text-align: left; /* Align the image to the left */
+      margin-top: 1.5%;
+      margin-left: -18%; /* Adjust the value to move the image further left */
+    }
+    
+    .image img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="video-container">
+      <video class="video" autoplay muted>
+        <source src="video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <div class="image">
+      <img src="image.png" alt="Image">
+    </div>
+  </div>
+
+  <script>
+    const video = document.querySelector('.video');
+
+    video.addEventListener('mouseout', () => {
+      video.play();
+    });
+  </script>
+</body>
+</html>
